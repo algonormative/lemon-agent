@@ -164,3 +164,45 @@ npm run deploy   # build + wrangler pages deploy (Cloudflare Pages)
 refreshes the skills. Edit only the canonical `guides/`, `start/`,
 `lists/`, and `examples/` files.
 
+
+## Analytics
+
+PostHog, and it is entirely optional — with no key the site builds, boots and
+serves exactly as it did before, every capture is a no-op, and `npm run dev`
+says so in the console rather than leaving an empty graph to be found in a
+month.
+
+```sh
+cp .env.example .env                                     # local
+gh secret set PUBLIC_POSTHOG_KEY --repo chronick/lemon-agent   # CI
+```
+
+The token is baked in at build time — this is a static site, so there is no
+later moment to read it.
+
+Two files, and the split is deliberate. `src/components/PostHog.astro` is init
+only: the official snippet, `is:inline`, gated on the key. `src/components/
+Analytics.astro` is every named event, in one delegated listener on `document`,
+which is why `CourseClient`, `PromptBuilder`, `ToolChooser` and the copy-button
+script contain no analytics code at all. Autocapture already records that a
+button was clicked; these five record what the site is trying to *cause*:
+
+| Event | Fires on | The question it answers |
+| --- | --- | --- |
+| `example_answered` | picking an option in a `TRY IT` widget | the house bet, measured — which option a learner reaches for **first** (`option_kind`: `correct`, `baseline`, `plausible`). A page where most readers pick the baseline is a page doing its job |
+| `code_copied` | the copy button on any code block | the guides exist to be run, not read; copying is the moment a reader becomes someone about to try it |
+| `brief_copied` | copying from the brief builder | the `/start` course's actual payoff, whether or not they then tick the lesson box |
+| `lesson_completed` | ticking a lesson | course progress, per lesson |
+| `tool_selected` | the agent picker | which branch of the instructions is worth the most editing effort |
+
+No PII, by construction: nobody logs in, and nothing reads a form field's value
+— `brief_copied` carries the brief's *length*, never its text. What someone is
+briefing their agent about is their business.
+
+**Known gap: the agent half is dark.** `/catalog.json`, `/llms.txt` and the raw
+markdown under `/start/`, `/guides/` and `/lists/` are published for programs,
+and a program runs no JavaScript — so none of those fetches appear anywhere in
+this project. `agent_artifact_opened` catches only the human who follows the
+link from a rendered page. Closing it properly needs a Cloudflare Pages Function
+sending `$http_log` events the way `10x402`'s Worker already does; until then,
+treat agent-side usage of the artefacts as unmeasured rather than as zero.

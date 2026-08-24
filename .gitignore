@@ -7,3 +7,6 @@ public/examples/
 .DS_Store
 public/start/
 public/craft/
+# Local PostHog key. .env.example is the committed template.
+.env
+.env.local

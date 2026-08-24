@@ -1,4 +1,7 @@
 ---
+import Analytics from '../components/Analytics.astro';
+import PostHog from '../components/PostHog.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -7,6 +10,7 @@ interface Props {
    *  blood-orange). Omit for house pages: the base is lemon. */
   citrus?: string;
 }
+
 const { title, description, wide = false, citrus } = Astro.props;
 const isStart = Astro.url.pathname.startsWith('/start');
 const isGuides = Astro.url.pathname.startsWith('/guides');
@@ -34,6 +38,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{Astro.url.pathname === '/' ? title : `${title} · Lemon Agent`}</title>
+    <PostHog />
   </head>
   <body class={citrus ? `citrus-${citrus}` : undefined}>
     <main class:list={{ wide }}>
@@ -130,6 +135,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         wrap.appendChild(btn);
       });
     </script>
+    <Analytics />
   </body>
 </html>
 

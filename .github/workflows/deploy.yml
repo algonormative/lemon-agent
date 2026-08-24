@@ -23,6 +23,13 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          # Baked into dist/ at build time — this is a static site, so there is
+          # no later moment to read it. An unset secret builds a working site
+          # with no analytics rather than failing, which is what a fork or a PR
+          # build should get. `phc_` tokens are ingestion-only and ship in the
+          # page HTML anyway; the secret store is repo hygiene, not secrecy.
+          PUBLIC_POSTHOG_KEY: ${{ secrets.PUBLIC_POSTHOG_KEY }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:

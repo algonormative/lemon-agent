@@ -80,6 +80,13 @@ export function exampleToHast(ex, { heading = true, voice = 'manual' } = {}) {
         type: 'radio',
         name: group,
         id: inputId,
+        // For analytics only (src/components/Analytics.astro). The widget
+        // itself is CSS-only and reads neither of these — which option a
+        // learner picks is the one signal this site's whole "examples are
+        // king" bet rests on, and the verdict kind is what makes the answer
+        // interesting rather than just a click.
+        'data-xmpl-key': opt.key,
+        'data-xmpl-kind': opt.kind,
       }),
       el('label', { className: ['xmpl-opt'], htmlFor: inputId }, [
         el('span', { className: ['xmpl-key'] }, [text(opt.key)]),

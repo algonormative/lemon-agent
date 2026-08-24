@@ -1,0 +1,46 @@
+---
+// PostHog, loaded from the official snippet rather than the npm package.
+//
+// WHY THE SNIPPET. This is a static site with no client framework and no
+// bundled runtime — the only JavaScript it ships is the copy buttons and the
+// course progress in this layout. Adding posthog-js as a dependency would make
+// analytics the largest thing in the build and put a package on the critical
+// path of a site whose entire pitch is that it is plain readable pages. The
+// snippet is ~1KB inline and fetches the rest asynchronously, so a slow or
+// blocked PostHog costs nothing but the analytics.
+//
+// WHY is:inline. Astro would otherwise process, typecheck and bundle this
+// script, and the snippet's minified body plus `window.posthog` fail that on
+// both counts. It is upstream's code, shipped verbatim, on purpose.
+//
+// UNSET IS A WORKING STATE, LOUDLY IN DEV. With no PUBLIC_POSTHOG_KEY the site
+// builds, boots and serves exactly as it always did — a fork, a local preview
+// or a PR build must not need an analytics key. But "no key" and "key typo'd"
+// look identical from the outside and both silently discard every event, so dev
+// says so in the console rather than leaving it to be discovered in a month of
+// empty graphs.
+//
+// The variable name matches nickdonohue-site's, deliberately: one name across
+// the house means one `gh secret set` habit rather than a per-repo lookup.
+const apiKey = import.meta.env.PUBLIC_POSTHOG_KEY;
+const apiHost = import.meta.env.PUBLIC_POSTHOG_HOST ?? 'https://us.i.posthog.com';
+const enabled = Boolean(apiKey);
+
+if (!enabled && import.meta.env.DEV) {
+  console.error(
+    'PUBLIC_POSTHOG_KEY variable required by PostHog is missing or un-configured, ' +
+      'this causes events to be silently missed. This error stops appearing once ' +
+      'PUBLIC_POSTHOG_KEY is configured'
+  );
+}
+---
+
+{enabled && (
+  <script is:inline define:vars={{ apiKey, apiHost }}>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys getNextSurveyStep onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init(apiKey, {
+      api_host: apiHost,
+      defaults: '2026-01-30',
+    });
+  </script>
+)}

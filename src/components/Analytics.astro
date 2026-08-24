@@ -1,0 +1,129 @@
+---
+// The named events, all of them, in one delegated listener.
+//
+// WHY ONE FILE AND NOT SPRINKLED THROUGH THE COMPONENTS. Every capture here
+// hangs off `document` rather than off the element that emits it, so this file
+// adds exactly zero lines to CourseClient, PromptBuilder, ToolChooser or the
+// copy-button script in Base.astro. Those are the site's working parts; this is
+// a lens on them, and a lens that has edited its subject in nine places is one
+// nobody can remove later. Delegation also means the events fire regardless of
+// whether the element existed at load — the copy buttons, notably, are injected
+// by a different script after this one has already bound.
+//
+// WHY NAMED EVENTS AT ALL, given autocapture is on. Autocapture records that a
+// button was clicked; it cannot record WHICH answer a learner chose, or that
+// the thing they copied was a brief rather than a code block. The four moments
+// below are the ones this site is actually trying to cause, and each is a
+// funnel step rather than a click.
+//
+// UNSET IS A WORKING STATE. Every call is `window.posthog?.capture(...)`. With
+// no key configured PostHog.astro renders nothing, `window.posthog` is
+// undefined, and every line here is a no-op — the site behaves exactly as it
+// did before analytics existed. No guard, no init check, no ordering problem.
+//
+// NO PII, BY CONSTRUCTION. Nobody logs in here, there are no accounts, and
+// nothing below reads a form field's VALUE — the brief builder's event counts
+// that a brief was copied and how long it was, never what it said. What someone
+// is briefing their agent about is their business.
+---
+
+<script is:inline>
+  (function () {
+    var capture = function (event, props) {
+      if (window.posthog) window.posthog.capture(event, props || {});
+    };
+    var path = function () {
+      return window.location.pathname;
+    };
+
+    document.addEventListener(
+      'click',
+      function (e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+
+        // A copied code block is the closest thing this site has to a
+        // conversion: the guides exist to be run, not read, and copying is the
+        // moment a reader becomes someone about to try it.
+        var copy = t.closest('.code-copy');
+        if (copy) {
+          var pre = copy.parentNode ? copy.parentNode.querySelector('pre') : null;
+          capture('code_copied', {
+            page: path(),
+            // Length only, never the code. A rough proxy for "a one-line
+            // command" vs "a whole skill file", which are different intents.
+            block_length: pre ? pre.innerText.length : null,
+          });
+          return;
+        }
+
+        // The brief builder is the /start course's payoff — the point where a
+        // learner has assembled something they will actually paste into an
+        // agent. Copying it is the completion of that lesson in practice,
+        // whether or not they then tick the box.
+        if (t.closest('[data-copy-brief]')) {
+          var out = document.querySelector('[data-brief-output]');
+          capture('brief_copied', {
+            page: path(),
+            brief_length: out ? out.innerText.length : null,
+          });
+          return;
+        }
+
+        var lesson = t.closest('[data-complete-lesson]');
+        if (lesson) {
+          capture('lesson_completed', {
+            page: path(),
+            lesson_id: lesson.getAttribute('data-complete-lesson'),
+          });
+          return;
+        }
+
+        // THE AGENT-FACING SURFACE, and the only visibility this site has into
+        // it. /catalog.json, /llms.txt and the raw markdown under /start/,
+        // /guides/ and /lists/ are published FOR programs — and a program
+        // fetching them runs no JavaScript, so none of those requests appear
+        // anywhere in this project. What this event catches is the human half:
+        // someone reading a page and following the link to the machine version,
+        // which is the leading indicator that the artefacts are worth having.
+        // The other half needs a Pages Function; see README.
+        var link = t.closest('a[href]');
+        if (link) {
+          var href = link.getAttribute('href') || '';
+          if (/^\/(catalog\.json|llms\.txt)$|\.md$/.test(href)) {
+            capture('agent_artifact_opened', { page: path(), artifact: href });
+          }
+        }
+      },
+      true
+    );
+
+    document.addEventListener('change', function (e) {
+      var t = e.target;
+      if (!t || !t.classList) return;
+
+      // The interactive examples. This is the signal the site's core bet rests
+      // on — that a concrete wrong-vs-right example teaches better than prose —
+      // and `kind` is what makes it an answer rather than a click: which option
+      // a learner reaches for FIRST is the measurement, and a page where most
+      // readers pick the baseline is a page doing its job.
+      if (t.classList.contains('xmpl-radio')) {
+        var widget = t.closest('[data-xmpl]');
+        capture('example_answered', {
+          page: path(),
+          example_id: widget ? widget.getAttribute('data-xmpl') : null,
+          option_key: t.getAttribute('data-xmpl-key'),
+          option_kind: t.getAttribute('data-xmpl-kind'),
+        });
+        return;
+      }
+
+      // Which agent readers are actually on. The course branches its
+      // instructions on this, so it is both an audience fact and a signal about
+      // which branch is worth the most editing effort.
+      if (t.hasAttribute && t.hasAttribute('data-tool-select')) {
+        capture('tool_selected', { page: path(), tool: t.value });
+      }
+    });
+  })();
+</script>
