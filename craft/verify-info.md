@@ -22,7 +22,7 @@ ledger and decide what the document is allowed to say.
 ## Install it
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill work-verify-info --yes
 ```
 

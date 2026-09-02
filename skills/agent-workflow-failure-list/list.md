@@ -46,7 +46,7 @@ is an open-source CLI that keeps one managed copy of a skill for every agent
 you use; `--agent codex claude-code` is one flag with two values, not a typo:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill agent-workflow-failure-list --yes
 ```
 

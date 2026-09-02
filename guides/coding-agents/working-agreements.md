@@ -57,7 +57,7 @@ Skills do not need to be copied separately into every agent. The open-source
 `skills` CLI can install one managed skill for the agents you use:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill agent-workflow-failure-list --yes
 ```
 

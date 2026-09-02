@@ -148,7 +148,7 @@ today; scoping = the published plan, stated before the work.
 
 Use `npx skills` for a managed install shared by Codex and Claude Code:
 
-`npx skills add chronick/lemon-agent --global --agent codex claude-code --yes`
+`npx skills add algonormative/lemon-agent --global --agent codex claude-code --yes`
 
 The repository contains:
 

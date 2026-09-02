@@ -51,7 +51,7 @@ file before writing it, and wait for my ok between steps.
 3. Offer to install the two failure-list skills through npx skills as one
    managed global install for the agents I use. Show me the exact command and
    wait for approval before running it. For Codex and Claude Code, use:
-   npx skills add chronick/lemon-agent --global --agent codex claude-code --yes
+   npx skills add algonormative/lemon-agent --global --agent codex claude-code --yes
 
 4. Look for one repeated mechanical workflow that should become a small CLI.
    Propose its name, inputs, output, and verification, but do not build it yet.

@@ -100,14 +100,14 @@ The workflow above is also an installable skill, for both Codex and
 Claude Code:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill work-verify-info --yes
 ```
 
 - [Read the workflow and the worked example](/work/verify-info/) — a
   memo and its source packet, and the ledger a real pass produced from
   them, with all four claim states.
-- [Source on GitHub](https://github.com/chronick/lemon-agent/tree/main/skills/work-verify-info)
+- [Source on GitHub](https://github.com/algonormative/lemon-agent/tree/main/skills/work-verify-info)
 
 The prompt above stays the no-install path; the skill is the same pass
 with the contract, the confidence rules, and the platform notes carried

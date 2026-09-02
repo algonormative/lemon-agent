@@ -38,7 +38,7 @@ would most improve clarity.
 **Install it as a reusable skill:**
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill prose-failure-list --yes
 ```
 

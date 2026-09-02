@@ -1,7 +1,7 @@
 {
   "name": "Lemon Agent",
   "tagline": "Free tools, honest measurements, agentic services.",
-  "operator": "chronick",
+  "operator": "algonormative",
   "updated": "2026-09-02",
   "house_rule": "Nothing ships without a working answer to: how would a user actually use this, today?",
   "provenance": "Mostly AI-generated, human-guided and reviewed.",
@@ -260,7 +260,7 @@
       ],
       "install": {
         "kind": "skills-cli",
-        "command": "npx skills add chronick/lemon-agent --global --agent codex claude-code --skill legibility-audit --yes",
+        "command": "npx skills add algonormative/lemon-agent --global --agent codex claude-code --skill legibility-audit --yes",
         "path": "skills/legibility-audit"
       }
     },
@@ -297,7 +297,7 @@
       "how_to_use": "/prose-failure-list/#how-to-use-it",
       "install": {
         "kind": "skills-cli",
-        "command": "npx skills add chronick/lemon-agent --global --agent codex claude-code --skill prose-failure-list --yes",
+        "command": "npx skills add algonormative/lemon-agent --global --agent codex claude-code --skill prose-failure-list --yes",
         "path": "skills/prose-failure-list"
       }
     },
@@ -316,7 +316,7 @@
       "how_to_use": "/agent-workflow-failure-list/#how-to-use-it",
       "install": {
         "kind": "skills-cli",
-        "command": "npx skills add chronick/lemon-agent --global --agent codex claude-code --skill agent-workflow-failure-list --yes",
+        "command": "npx skills add algonormative/lemon-agent --global --agent codex claude-code --skill agent-workflow-failure-list --yes",
         "path": "skills/agent-workflow-failure-list"
       }
     },
@@ -332,7 +332,7 @@
       "how_to_use": "The Interview Conductor (installable skill, instrument page at /writing/interview-conductor/) pulls a draft out of the writer one question at a time; the subtraction pass runs the Prose Failure List as a review. The agent interrogates and cuts; the human writes.",
       "install": {
         "kind": "skills-cli",
-        "command": "npx skills add chronick/lemon-agent --global --agent codex claude-code --skill writing-interview --yes",
+        "command": "npx skills add algonormative/lemon-agent --global --agent codex claude-code --skill writing-interview --yes",
         "path": "skills/writing-interview"
       }
     },

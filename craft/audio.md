@@ -98,7 +98,7 @@ wrong with this file that I would rather not discover later?**
 
 ### The one workflow
 
-The studio version runs on [smpl](https://github.com/chronick/smpl), a
+The studio version runs on [smpl](https://github.com/algonormative/smpl), a
 pipe-based audio toolchain that passes NDJSON frames between stages. The
 first packaged pass is a single pipe:
 
@@ -158,8 +158,8 @@ texture, and `lossy.wav`, the same texture after a 64 kbps MP3 round trip
 back to WAV.
 
 ```sh
-curl -LO https://chronick.github.io/smpl/assets/bright.wav
-curl -LO https://chronick.github.io/smpl/assets/lossy.wav
+curl -LO https://algonormative.github.io/smpl/assets/bright.wav
+curl -LO https://algonormative.github.io/smpl/assets/lossy.wav
 
 smpl read bright.wav | smpl qc | smpl spectrogram --kind mel | smpl view > /dev/null
 smpl read lossy.wav  | smpl qc | smpl spectrogram --kind mel | smpl view > /dev/null
@@ -180,7 +180,7 @@ Three sites touch this material, and each owns one layer:
 - **lemon-agent.dev/audio** documents the practice: folder discipline,
   gates, receipts, the loop back into the DAW, and the skill that
   conducts it.
-- **[smpl](https://github.com/chronick/smpl)** documents the tool:
+- **[smpl](https://github.com/algonormative/smpl)** documents the tool:
   install, subcommands, the wire protocol, the feature-key registry.
   This page links to that reference and never restates it. A flag
   documented in two places goes stale in one of them.

@@ -69,7 +69,7 @@ Use the open-source `skills` CLI so Codex and Claude Code can share one
 managed install:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --yes
 ```
 
@@ -177,7 +177,7 @@ month.
 
 ```sh
 cp .env.example .env                                     # local
-gh secret set PUBLIC_POSTHOG_KEY --repo chronick/lemon-agent   # CI
+gh secret set PUBLIC_POSTHOG_KEY --repo algonormative/lemon-agent   # CI
 ```
 
 The token is baked in at build time — this is a static site, so there is no

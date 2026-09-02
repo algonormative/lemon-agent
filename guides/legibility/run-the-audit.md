@@ -159,7 +159,7 @@ the six shapes, the hardened runner with all three trap fixes baked in,
 grading, and the findings table:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill legibility-audit --yes
 ```
 

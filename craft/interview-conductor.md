@@ -23,7 +23,7 @@ you drive.
 ## Install it
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill writing-interview --yes
 ```
 

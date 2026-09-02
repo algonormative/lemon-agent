@@ -75,7 +75,7 @@ taxonomy. (This supersedes the earlier note reserving yuzu for audio.)
   links to the tool's own site or repo for install, flags, and
   reference. A flag documented twice goes stale in one place. This is
   what keeps `/audio` distinct from both
-  [smpl](https://github.com/chronick/smpl) (the toolchain, which owns
+  [smpl](https://github.com/algonormative/smpl) (the toolchain, which owns
   its CLI reference and feature-key registry) and lemon.audio (toys,
   drops, and the command-line studio, in a weirder register): practice
   here, tool there, play at lemon.audio.

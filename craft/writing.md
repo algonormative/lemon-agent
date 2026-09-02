@@ -31,7 +31,7 @@ artifacts:
 Install the skill for both Codex and Claude Code:
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill writing-interview --yes
 ```
 
@@ -59,7 +59,7 @@ and findings. You create the argument, language, and final judgment.
 Develop an essay, post, talk, or chapter through a focused conversation.
 It ends with notes and a brief, never a draft.
 
-- [Source on GitHub](https://github.com/chronick/lemon-agent/tree/main/skills/writing-interview)
+- [Source on GitHub](https://github.com/algonormative/lemon-agent/tree/main/skills/writing-interview)
 - [Read the workflow and fallback prompt](/writing/interview-conductor/)
 
 ### Prose Failure List
@@ -69,11 +69,11 @@ Every finding cites a numbered pattern and the exact phrase that triggered
 it, so you can disagree with the review.
 
 ```sh
-npx skills add chronick/lemon-agent --global \
+npx skills add algonormative/lemon-agent --global \
   --agent codex claude-code --skill prose-failure-list --yes
 ```
 
-- [Source on GitHub](https://github.com/chronick/lemon-agent/tree/main/skills/prose-failure-list)
+- [Source on GitHub](https://github.com/algonormative/lemon-agent/tree/main/skills/prose-failure-list)
 - [Read the Prose Failure List](/prose-failure-list/)
 
 ## What comes later
