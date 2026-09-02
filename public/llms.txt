@@ -1,7 +1,7 @@
 # Lemon Agent
 
 > A practical guide to working with coding agents: a short starting course,
-> four deeper field guides, two numbered failure lists (installable as
+> five deeper field guides, two numbered failure lists (installable as
 > agent skills), and services agents can call directly.
 
 House rule: nothing ships without a working answer to "how would a user
@@ -72,6 +72,18 @@ against ground truth, and a re-run/diff loop. Installable companion:
 the `legibility-audit` skill.
 
 - [Step 1: Run the audit](/guides/legibility/run-the-audit.md)
+
+### Paying for Things with Agents, raw at /guides/payments/*.md
+
+Funding an agent wallet so it can pay x402 endpoints on Base: four
+funding routes compared (AgentCash, a CDP server wallet, Poncho, a
+Coinbase withdrawal), the five ways to lose the money, per-call and
+per-day spend caps taken from the shipped SDKs, and one real $0.0025
+purchase with an on-chain receipt. Every price, cap and version was
+checked against a live endpoint, a shipped package, or a first-party doc
+on 2026-09-02; where a vendor documents nothing, the table says so.
+
+- [Step 1: Give your agent $5 and let it buy something](/guides/payments/give-your-agent-five-dollars.md)
 
 ## Interactive examples
 

@@ -170,7 +170,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     --accent-soft: rgba(199, 216, 111, 0.15);
     --accent-hover: #8b9d43;
   }
-  /* The citrus family: each guide wears a variety of the same fruit. */
+  /* The citrus family: each guide wears a variety of the same fruit.
+     `.citrus-lemon` restates the house defaults so a page can opt into
+     lemon explicitly rather than falling through to it silently. */
+  .citrus-lemon { --accent: #c7d86f; --accent-ink: #5e7024; --accent-soft: rgba(199, 216, 111, 0.15); --accent-hover: #8b9d43; }
   .citrus-lime { --accent: #a4ce54; --accent-ink: #47761b; --accent-soft: rgba(164, 206, 84, 0.16); --accent-hover: #7ba03c; }
   .citrus-tangerine { --accent: #f2ab52; --accent-ink: #8f5312; --accent-soft: rgba(242, 171, 82, 0.16); --accent-hover: #c98836; }
   .citrus-grapefruit { --accent: #f293a2; --accent-ink: #a63a52; --accent-soft: rgba(242, 147, 162, 0.16); --accent-hover: #cd6f80; }
@@ -202,6 +205,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       --accent-soft: rgba(189, 207, 120, 0.10);
       --accent-hover: #87964f;
     }
+    .citrus-lemon { --accent: #b8c970; --accent-ink: #bdcf78; --accent-soft: rgba(189, 207, 120, 0.10); --accent-hover: #87964f; }
     .citrus-lime { --accent: #a6cd62; --accent-ink: #accf7f; --accent-soft: rgba(166, 205, 98, 0.11); --accent-hover: #84a34e; }
     .citrus-tangerine { --accent: #eab066; --accent-ink: #e9b788; --accent-soft: rgba(234, 176, 102, 0.11); --accent-hover: #b98a4d; }
     .citrus-grapefruit { --accent: #ea97a6; --accent-ink: #eda6b2; --accent-soft: rgba(234, 151, 166, 0.11); --accent-hover: #b97684; }
@@ -378,6 +382,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   .list-body ol li { margin: 0.9rem 0; }
   .list-body hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0 1.5rem; }
   .list-body hr ~ p { color: var(--muted); font-size: 0.85rem; }
+  /* A comparison table wider than the reading column scrolls inside
+     itself rather than pushing the whole page sideways (same call as the
+     claim ledger on /work/verify-info). */
+  .list-body table { display: block; max-width: 100%; overflow-x: auto; }
 
   /* Interactive examples: CSS-only (radio + sibling selectors) */
   .xmpl {

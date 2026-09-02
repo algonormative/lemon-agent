@@ -2,7 +2,7 @@
   "name": "Lemon Agent",
   "tagline": "Free tools, honest measurements, agentic services.",
   "operator": "chronick",
-  "updated": "2026-08-12",
+  "updated": "2026-09-02",
   "house_rule": "Nothing ships without a working answer to: how would a user actually use this, today?",
   "provenance": "Mostly AI-generated, human-guided and reviewed.",
   "members": [
@@ -263,6 +263,24 @@
         "command": "npx skills add chronick/lemon-agent --global --agent codex claude-code --skill legibility-audit --yes",
         "path": "skills/legibility-audit"
       }
+    },
+    {
+      "id": "payments-guide",
+      "name": "Paying for Things with Agents",
+      "tier": "free-artifact",
+      "kind": "guide",
+      "status": "published",
+      "html": "/guides/payments/",
+      "raw_dir": "/guides/payments/",
+      "how_to_use": "Funding an agent wallet so it can pay x402 endpoints on Base: four funding routes compared (AgentCash, a CDP server wallet, Poncho, a Coinbase withdrawal), the five ways to lose the money, per-call and per-day spend caps taken from the shipped SDKs, and one real $0.0025 purchase with an on-chain receipt. Every price, cap and version was checked against a live endpoint, a shipped package, or a first-party doc on 2026-09-02; where a vendor documents nothing, the table says so.",
+      "chapters": [
+        {
+          "step": 1,
+          "id": "give-your-agent-five-dollars",
+          "title": "Give your agent $5 and let it buy something",
+          "raw": "/guides/payments/give-your-agent-five-dollars.md"
+        }
+      ]
     },
     {
       "id": "prose-failure-list",

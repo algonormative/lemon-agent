@@ -66,6 +66,25 @@ export const GUIDES = [
       'the answers, grade them against reality, fix the gaps, re-run, ' +
       'and diff.',
   },
+  // Wears the house lemon by explicit assignment (DESIGN.md, 2026-09-02):
+  // the other varieties are spoken for, and minting a sixth is an owner
+  // call. `.citrus-lemon` is a real rule in Base.astro, not a fallthrough.
+  {
+    slug: 'payments',
+    title: 'Paying for Things with Agents',
+    short: 'Agent payments',
+    citrus: 'lemon',
+    blurb:
+      'Fund an agent so it can pay for what it uses: four funding routes ' +
+      'compared, the five ways to lose the money, per-call and per-day ' +
+      'spend caps, and one real sub-cent purchase you can read back ' +
+      'on-chain.',
+    intro:
+      'An agent that can pay for a call is a different tool from one that ' +
+      'has to stop and ask you. The mechanics are small but unforgiving, ' +
+      'and the official docs stop at testnet. These steps take a wallet ' +
+      'from empty to one verified purchase, under a cap you chose.',
+  },
 ];
 
 export const guideBySlug = (slug) => GUIDES.find((g) => g.slug === slug);

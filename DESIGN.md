@@ -18,7 +18,16 @@ everything stays one brand:
 | Git + Coding Agents | **tangerine** | `#f2ab52` | `/guides/git/*` |
 | Keeping a Vault | **grapefruit** | `#f293a2` | `/guides/vault/*` |
 | What Does AI Say About You? | **yuzu** | `#e8c94e` | `/guides/legibility/*` |
+| Paying for Things with Agents | **lemon** | chartreuse `#c7d86f` | `/guides/payments/*` |
 | Failure lists | **blood orange** | `#ef7c50` | `/prose-failure-list/`, `/agent-workflow-failure-list/` |
+
+The payments guide wears the house lemon on purpose (assigned
+2026-09-02): the five varieties above are all spoken for, blood orange
+carries the lists' taxonomy, and minting a sixth variety is an owner
+call rather than a publishing one. `.citrus-lemon` is defined
+explicitly in `Base.astro` so the guide *opts into* the house accent
+instead of falling through to it silently — swapping in a new variety
+later is one field in `GUIDES` plus two CSS lines.
 
 Mechanics: `Base.astro` defines an accent trio with lemon defaults
 (`--accent`, `--accent-ink` at ≥4.5:1 on the paper background,
