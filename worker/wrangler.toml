@@ -1,0 +1,28 @@
+# Zone Worker for the machine-readable surfaces. Kept out of the repo root so
+# it cannot interfere with `npm run deploy` (`wrangler pages deploy dist`).
+# Deploy: cd worker && npx wrangler deploy   (owner-run; never from an agent)
+# Requires worker/surfaces.generated.js — `npm run build` emits it (postbuild).
+name = "lemon-agent-surfaces"
+main = "index.js"
+compatibility_date = "2026-08-01"
+workers_dev = false
+
+[[routes]]
+pattern = "lemon-agent.dev/llms.txt"
+zone_name = "lemon-agent.dev"
+
+[[routes]]
+pattern = "lemon-agent.dev/catalog.json"
+zone_name = "lemon-agent.dev"
+
+[[routes]]
+pattern = "lemon-agent.dev/robots.txt"
+zone_name = "lemon-agent.dev"
+
+[[routes]]
+pattern = "lemon-agent.dev/sitemap-index.xml"
+zone_name = "lemon-agent.dev"
+
+[[routes]]
+pattern = "lemon-agent.dev/sitemap-0.xml"
+zone_name = "lemon-agent.dev"
