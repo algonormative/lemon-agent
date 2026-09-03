@@ -10,6 +10,8 @@
     "prebuild": "npm run sync",
     "dev": "astro dev",
     "build": "astro build",
+    "postbuild": "node scripts/generate-surfaces.mjs",
+    "test": "node --test test/*.test.js",
     "preview": "astro preview",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=lemon-agent --branch=main"
   },
