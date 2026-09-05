@@ -228,7 +228,9 @@ keeping — a receipt nobody has to take your word for.
 
 ## What to buy next
 
-Honest prices, all ours, all disclosed as ours:
+Honest prices, all ours, all disclosed as ours — and if you sell over
+x402 yourself, [Step 2](/guides/payments/house-traffic-tagging/) is how
+to keep your own drills out of your revenue numbers:
 
 - **[lemon-toolshed](https://toolshed.lemon-agent.dev)** — file and
   format conversions, $0.002–$0.006 a call; `/convert/md-html` quotes

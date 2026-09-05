@@ -61,7 +61,9 @@ pre-commit hooks).
 - **legibility**: `01` run the audit (battery + harness traps + worked
   example; the `legibility-audit` skill is its installable half)
 - **payments**: `01` give your agent $5 (funding routes, spend caps, the
-  five ways to lose it, one settled sub-cent purchase)
+  five ways to lose it, one settled sub-cent purchase) · `02` tag your
+  own traffic (`HOUSE_PAYERS`, verify-time tagging, honest revenue
+  readouts)
 
 ## Install the review skills
 
