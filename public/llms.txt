@@ -171,6 +171,21 @@ Run the lists as advisory passes: they report, they never gate.
   and an MCP surface. Operator instance today; public docs and
   self-serve keys are the next ship.
 
+### Services agents can call directly (x402, priced per call)
+
+Five live paid endpoints. Prices verified 2026-09-02.
+
+- [Toolshed](https://toolshed.lemon-agent.dev)
+  19 hosted format converters, one call per conversion. $0.002-$0.006/call
+- [10x402](https://10x402.com)
+  x402 conformance linting, 82 checks per report. $0.005-$0.25/call
+- [kino402](https://kino402.com)
+  Frontier video and TTS generation, one call per render. $0.008-$0.372/call
+- [penny402](https://penny402.fun)
+  Ten muse and oracle attractions, one flat price per call. $0.0025/call
+- [Parallax](https://parallax402.com)
+  Settlement-graph market facts about the x402 economy. $0.010/call
+
 ## Machine catalog
 
 - [catalog.json](/catalog.json): every member with tier, kind, status,

@@ -127,6 +127,46 @@ const totalMinutes = START_LESSONS.reduce((sum, lesson) => sum + lesson.minutes,
     </div>
   </section>
 
+  <section class="services" aria-labelledby="services-title">
+    <div class="section-heading">
+      <p class="eyebrow">Services agents can call</p>
+      <h2 id="services-title">Five live endpoints, priced per call.</h2>
+      <p class="services-note">Paid over x402. Prices verified 2026-09-02.</p>
+    </div>
+    <div class="service-grid">
+      <a class="service-card" href="https://toolshed.lemon-agent.dev">
+        <strong>Toolshed</strong>
+        <span>19 hosted format converters, one call per conversion.</span>
+        <em>$0.002-$0.006/call</em>
+        <code>https://toolshed.lemon-agent.dev</code>
+      </a>
+      <a class="service-card" href="https://10x402.com">
+        <strong>10x402</strong>
+        <span>x402 conformance linting, 82 checks per report.</span>
+        <em>$0.005-$0.25/call</em>
+        <code>https://10x402.com</code>
+      </a>
+      <a class="service-card" href="https://kino402.com">
+        <strong>kino402</strong>
+        <span>Frontier video and TTS generation, one call per render.</span>
+        <em>$0.008-$0.372/call</em>
+        <code>https://kino402.com</code>
+      </a>
+      <a class="service-card" href="https://penny402.fun">
+        <strong>penny402</strong>
+        <span>Ten muse and oracle attractions, one flat price per call.</span>
+        <em>$0.0025/call</em>
+        <code>https://penny402.fun</code>
+      </a>
+      <a class="service-card" href="https://parallax402.com">
+        <strong>Parallax</strong>
+        <span>Settlement-graph market facts about the x402 economy.</span>
+        <em>$0.010/call</em>
+        <code>https://parallax402.com</code>
+      </a>
+    </div>
+  </section>
+
   <section class="experiments">
     <p><strong>Experiments:</strong> Lemon Agent also houses small tools and agent-facing services. The first, pathgrip, is a bookmark store agents can call. It runs as the operator’s own instance today; there is nothing for you to sign up for yet, and we’d rather say so than pretend. <a href="https://pathgrip.net">See its current status →</a></p>
   </section>
@@ -189,12 +229,21 @@ const totalMinutes = START_LESSONS.reduce((sum, lesson) => sum + lesson.minutes,
   .reference-links a:hover { border-color: var(--accent-hover); border-left-color: var(--accent); background: var(--accent-soft); }
   .reference-links strong, .reference-links span { display: block; }
   .reference-links span { color: var(--muted); font-size: 0.8rem; }
+  .services { padding: 0 0 3rem; }
+  .services-note { max-width: 34rem; margin: 0.6rem 0 0; color: var(--muted); font-size: 0.82rem; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-top: 2rem; }
+  .service-card { display: block; padding: 1.15rem; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0.65rem; background: var(--card); color: inherit; text-decoration: none; }
+  .service-card:hover { border-color: var(--accent-hover); border-left-color: var(--accent); background: var(--accent-soft); box-shadow: var(--glow); }
+  .service-card strong { display: block; color: var(--accent-ink); }
+  .service-card span { display: block; margin: 0.45rem 0; color: var(--muted); font-size: 0.85rem; }
+  .service-card em { display: block; color: var(--ink); font-family: ui-monospace, Menlo, Monaco, Consolas, monospace; font-size: 0.78rem; font-style: normal; font-weight: 750; }
+  .service-card code { display: block; margin-top: 0.3rem; color: var(--muted); font-size: 0.72rem; word-break: break-all; }
   .experiments { color: var(--muted); font-size: 0.82rem; }
   @media (max-width: 52rem) {
     .hero, .start-preview { grid-template-columns: 1fr; }
     .hero { min-height: 0; padding-top: 0; }
     .session-card { max-width: 34rem; }
-    .outcome-grid, .guide-grid { grid-template-columns: 1fr; }
+    .outcome-grid, .guide-grid, .service-grid { grid-template-columns: 1fr; }
     .start-intro { position: static; }
     .manual-heading, .reference-bar { grid-template-columns: 1fr; }
     .manual-heading { align-items: start; flex-direction: column; }
