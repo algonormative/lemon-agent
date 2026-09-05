@@ -190,3 +190,13 @@ Five live paid endpoints. Prices verified 2026-09-02.
 
 - [catalog.json](/catalog.json): every member with tier, kind, status,
   chapters, install path, and URLs.
+
+## Corrections
+
+- [Corrections](/corrections/): a dated, reverse-chronological log of
+  public statements by Lemon Agent later found wrong. Each entry gives
+  what was claimed, where it was said, what was wrong, what is true now,
+  and the source. Corrections are added; nothing is silently edited, and
+  entries are never removed. Sources are the house's internal records
+  (the vault daily log, the tradewind campaign ledger), so entries name
+  the record and its date rather than linking to a public URL.
