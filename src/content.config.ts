@@ -49,4 +49,21 @@ const craft = defineCollection({
   }),
 });
 
-export const collections = { lists, guides, start, craft };
+// One file per correction. The six fields the /corrections page renders are
+// the record: when, what was claimed, where it was said, what was wrong,
+// what is true now, and which internal record says so. The body is optional
+// and carries a short note when one is needed.
+const corrections = defineCollection({
+  loader: glob({ pattern: '*.md', base: './corrections' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    claimed: z.string(),
+    where: z.string(),
+    wrong: z.string(),
+    now: z.string(),
+    source: z.string(),
+  }),
+});
+
+export const collections = { lists, guides, start, craft, corrections };
