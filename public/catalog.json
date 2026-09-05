@@ -2,7 +2,7 @@
   "name": "Lemon Agent",
   "tagline": "Free tools, honest measurements, agentic services.",
   "operator": "algonormative",
-  "updated": "2026-09-02",
+  "updated": "2026-09-05",
   "house_rule": "Nothing ships without a working answer to: how would a user actually use this, today?",
   "provenance": "Mostly AI-generated, human-guided and reviewed.",
   "members": [
@@ -381,6 +381,56 @@
       "self_serve": false,
       "docs": "pending",
       "note": "Operator instance today; public docs and self-serve keys are the next ship."
+    },
+    {
+      "id": "toolshed",
+      "name": "Toolshed",
+      "tier": "agentic-service",
+      "kind": "service",
+      "status": "live",
+      "url": "https://toolshed.lemon-agent.dev",
+      "how_to_use": "19 hosted format converters, one call per conversion.",
+      "price_range": "$0.002-$0.006/call"
+    },
+    {
+      "id": "10x402",
+      "name": "10x402",
+      "tier": "agentic-service",
+      "kind": "service",
+      "status": "live",
+      "url": "https://10x402.com",
+      "how_to_use": "x402 conformance linting, 82 checks per report.",
+      "price_range": "$0.005-$0.25/call"
+    },
+    {
+      "id": "kino402",
+      "name": "kino402",
+      "tier": "agentic-service",
+      "kind": "service",
+      "status": "live",
+      "url": "https://kino402.com",
+      "how_to_use": "Frontier video and TTS generation, one call per render.",
+      "price_range": "$0.008-$0.372/call"
+    },
+    {
+      "id": "penny402",
+      "name": "penny402",
+      "tier": "agentic-service",
+      "kind": "service",
+      "status": "live",
+      "url": "https://penny402.fun",
+      "how_to_use": "Ten muse and oracle attractions, one flat price per call.",
+      "price_range": "$0.0025/call"
+    },
+    {
+      "id": "parallax",
+      "name": "Parallax",
+      "tier": "agentic-service",
+      "kind": "service",
+      "status": "live",
+      "url": "https://parallax402.com",
+      "how_to_use": "Settlement-graph market facts about the x402 economy.",
+      "price_range": "$0.010/call"
     }
   ]
 }
