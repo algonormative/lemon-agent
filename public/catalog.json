@@ -2,7 +2,7 @@
   "name": "Lemon Agent",
   "tagline": "Free tools, honest measurements, agentic services.",
   "operator": "algonormative",
-  "updated": "2026-09-05",
+  "updated": "2026-09-10",
   "house_rule": "Nothing ships without a working answer to: how would a user actually use this, today?",
   "provenance": "Mostly AI-generated, human-guided and reviewed.",
   "members": [
@@ -279,6 +279,12 @@
           "id": "give-your-agent-five-dollars",
           "title": "Give your agent $5 and let it buy something",
           "raw": "/guides/payments/give-your-agent-five-dollars.md"
+        },
+        {
+          "step": 5,
+          "id": "house-receipts",
+          "title": "House receipts",
+          "raw": "/guides/payments/house-receipts.md"
         }
       ]
     },
