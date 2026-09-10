@@ -226,6 +226,11 @@ transfer out: a `USDC` transfer of `2500` to
 `https://base.blockscout.com/tx/<hash>`. That link is the thing worth
 keeping — a receipt nobody has to take your word for.
 
+For the whole exchange written out step by step — the unpaid request,
+the challenge, the authorization, the facilitator's verify and settle,
+and the receipt on chain, on Base and on Solana — see
+[Step 4: A settled round trip on both rails](/guides/payments/a-settled-round-trip/).
+
 ## What to buy next
 
 Honest prices, all ours, all disclosed as ours — and if you sell over
