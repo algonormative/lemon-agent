@@ -190,6 +190,11 @@ Watch the version. The older `x402-fetch@1.2.0` had a different shape:
 at $5. A cap you wrote in code is a bug away from wrong; a wallet with $5
 in it cannot spend $50.
 
+If the money lands on the wrong chain — or the thing you want to buy
+prices in USDC somewhere other than Base —
+[Step 3](/guides/payments/moving-usdc-between-rails/) covers moving it
+between rails.
+
 ## The worked example
 
 One real purchase, $0.0025, USDC on Base:
