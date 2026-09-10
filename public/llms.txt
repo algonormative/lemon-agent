@@ -81,9 +81,15 @@ Coinbase withdrawal), the five ways to lose the money, per-call and
 per-day spend caps taken from the shipped SDKs, and one real $0.0025
 purchase with an on-chain receipt. Every price, cap and version was
 checked against a live endpoint, a shipped package, or a first-party doc
-on 2026-09-02; where a vendor documents nothing, the table says so.
+on 2026-09-02; where a vendor documents nothing, the table says so. The
+guide also publishes the house's own receipts: the self-funded versus
+stranger-funded split, as dated rows, each figure naming the instrument
+behind it (settlement ledger, house buyer wallets, chain receipts, or the
+parallax census). Rows on that page are added, never edited; it is also
+reachable at /receipts.
 
 - [Step 1: Give your agent $5 and let it buy something](/guides/payments/give-your-agent-five-dollars.md)
+- [Step 5: House receipts](/guides/payments/house-receipts.md)
 
 ## Interactive examples
 

@@ -44,6 +44,9 @@ function rehypeExamples() {
 export default defineConfig({
   site: 'https://lemon-agent.dev',
   integrations: [sitemap()],
+  redirects: {
+    '/receipts': '/guides/payments/house-receipts/',
+  },
   markdown: {
     rehypePlugins: [rehypeExamples],
   },
