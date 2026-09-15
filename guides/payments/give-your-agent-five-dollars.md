@@ -231,6 +231,12 @@ the challenge, the authorization, the facilitator's verify and settle,
 and the receipt on chain, on Base and on Solana — see
 [Step 4: A settled round trip on both rails](/guides/payments/a-settled-round-trip/).
 
+If that call had timed out and your agent had retried it, whether the
+same authorization bought a second answer or was refused as already spent
+is the seller's design, not yours —
+[Step 6: The idempotency receipt](/guides/payments/idempotency-receipt/)
+is the pattern that gets it right in both directions.
+
 ## What to buy next
 
 Honest prices, all ours, all disclosed as ours — and if you sell over

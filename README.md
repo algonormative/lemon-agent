@@ -63,7 +63,8 @@ pre-commit hooks).
 - **payments**: `01` give your agent $5 (funding routes, spend caps, the
   five ways to lose it, one settled sub-cent purchase) · `02` tag your
   own traffic (`HOUSE_PAYERS`, verify-time tagging, honest revenue
-  readouts)
+  readouts) · `06` the idempotency receipt (claim-and-release on a
+  verified payment, the exits that give it back, the no-op receipt row)
 
 ## Install the review skills
 
