@@ -108,6 +108,12 @@ that verify, settle, ledger, and alerting all work end to end; they are
 just not sales. Deleting them buys you nothing and costs you your only
 proof.
 
+The same reasoning covers the ledger's quieter half — the payments you
+claimed and gave back because nothing was served.
+[Step 6: The idempotency receipt](/guides/payments/idempotency-receipt/)
+is the row that records those, and why a delete needs a receipt of its
+own.
+
 The same split applies to counts. "Settlements this week" is a pipeline
 number. "Customers this week" is a revenue number. Say which one you
 mean.

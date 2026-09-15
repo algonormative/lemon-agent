@@ -90,6 +90,7 @@ reachable at /receipts.
 
 - [Step 1: Give your agent $5 and let it buy something](/guides/payments/give-your-agent-five-dollars.md)
 - [Step 5: House receipts](/guides/payments/house-receipts.md)
+- [Step 6: The idempotency receipt](/guides/payments/idempotency-receipt.md)
 
 ## Interactive examples
 
